@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d73d3316-cf5b-43bf-b605-085847ed68d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Cedine.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../chatbox_react/.idea/chatbox_react.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Bilemo_ApiPlatform/package.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Bilemo_Api_React/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../Bilemo_Api_React/.gitignore" afterDir="false" />
@@ -66,9 +64,12 @@
       <change beforePath="$PROJECT_DIR$/../FacturesGratuites/templates/facture/facture-list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../FacturesGratuites/templates/facture/facture-list.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/footer.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Company.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20200423130211.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/CompanyRepository.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../ToDoList/src/Entity/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoList/src/Entity/Task.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ToDoList/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoList/src/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Vuejs/.idea/Vuejs.iml" beforeDir="false" />
@@ -281,7 +282,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587640692812</updated>
-      <workItem from="1587640694079" duration="3745000" />
+      <workItem from="1587640694079" duration="4556000" />
     </task>
     <servers />
   </component>
