@@ -3,7 +3,7 @@ import React, {Fragment} from 'react';
 const ModalCustomerDetail = ({customer}) => {
     return (
         <Fragment>
-            <div className="modal fade" id="clientDetail" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div className="modal fade" id="customerDetail" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                     <div className="modal-content">
                         <div className="modal-header bg-light">

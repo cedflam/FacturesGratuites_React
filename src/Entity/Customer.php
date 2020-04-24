@@ -5,10 +5,13 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CustomerRepository")
+ * @UniqueEntity("email", message="Ce client existe déjà")
  */
 class Customer
 {
@@ -22,42 +25,56 @@ class Customer
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Le prénom est obligatoire")
+     * @Assert\Length(min="2", minMessage="Le prénom doit faire au moins 2 caractères")
      * @Groups({"customers"})
      */
     private $firstName;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Le nom est obligatoire")
+     * @Assert\Length(min="2", minMessage="Le nom doit faire au moins 2 caractères")
      * @Groups({"customers"})
      */
     private $lastName;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="L'adresse est obligatoire")
+     * @Assert\Length(min="10", minMessage="L'adresse doit faire au moins 10 caractères")
      * @Groups({"customers"})
      */
     private $address;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Le code postal est obligatoire")
+     * @Assert\Length(min="5",max="5", exactMessage="Le code postal doit faire 5 caractères")
      * @Groups({"customers"})
      */
     private $postalCode;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="La ville est obligatoire")
+     * @Assert\Length(min="2", minMessage="La ville doit faire au moins 2 caractères")
      * @Groups({"customers"})
      */
     private $city;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="L'email est obligatoire")
+     * @Assert\Email(message="L'email est non valide")
      * @Groups({"customers"})
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Le téléphone est obligatoire")
+     * @Assert\Length(min="10",max="10", exactMessage="Le téléphone doit comporter 10 chiffres")
      * @Groups({"customers"})
      */
     private $tel;
