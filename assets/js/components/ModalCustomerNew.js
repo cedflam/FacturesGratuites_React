@@ -55,9 +55,14 @@ const ModalCustomerNew = (props) => {
         }
     }
 
+    //Permet de rafraichir la liste des customers à la fermeture de la modal
+    const handleClose = () => {
+        window.location.href = '/customers';
+    }
+
     return (
         <Fragment>
-            <div className="modal fade" id="customerNew" tabIndex="-1" role="dialog"
+            <div className="modal fade" id="customerNew" tabIndex="-1" role="dialog" data-backdrop="static"
                  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                     <div className="modal-content">
@@ -65,8 +70,8 @@ const ModalCustomerNew = (props) => {
                             <h3 className="modal-title " id="exampleModalCenterTitle">
                                 Nouveau Client
                             </h3>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
+                            <button onClick={handleClose} type="button" className="close" data-dismiss="modal" aria-label="Close" >
+                                <span aria-hidden="true" >&times;</span>
                             </button>
                         </div>
                         <div className="modal-body bg-light">

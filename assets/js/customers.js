@@ -30,7 +30,7 @@ const Customers = (props) => {
                 setLoading(false);
             })
             .catch(error => console.log(error.response))
-    }, []);
+    }, [modal]);
 
 
     /**
@@ -38,8 +38,8 @@ const Customers = (props) => {
      * @param customer
      */
     const customerRecover = (customer) => {
-        setModal(true);
         setCustomer(customer);
+        setModal(true);
     }
 
     /**
@@ -115,8 +115,8 @@ const Customers = (props) => {
                 </tbody>
             </table>
             {loading && <AjaxLoading/>}
-            <ModalCustomerDetail customer={customer}/>
-            <ModalCustomerEdit customer={customer}/>
+            <ModalCustomerDetail customer={customer} modal={modal}/>
+            <ModalCustomerEdit customer={customer} modal={modal}/>
             <ModalCustomerNew/>
 
         </Fragment>
