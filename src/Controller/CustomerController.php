@@ -65,13 +65,52 @@ class CustomerController extends AbstractController
         $violations = $validator->validate($customer);
         if (count($violations) > 0) {
             $error = $serializer->serialize($violations, 'json');
-            return JsonResponse::fromJsonString($error, 400);
+            return JsonResponse::fromJsonString($error, Response::HTTP_BAD_REQUEST);
         }
         //
         $manager->persist($customer);
         $manager->flush();
 
         return new Response('created', Response::HTTP_CREATED);
+    }
+
+    /**
+     * Permet de modifier un customer
+     *
+     * @Route("/customers/edit/{id}", name="customers_edit")
+     *
+     * @param Customer $customer
+     * @param EntityManagerInterface $manager
+     * @param SerializerInterface $serializer
+     * @param ValidatorInterface $validator
+     * @param Request $request
+     * @return Response
+     */
+    public function editCustomer(Customer $customer, EntityManagerInterface $manager, SerializerInterface $serializer, ValidatorInterface $validator, Request $request)
+    {
+        $data = $request->getContent();
+        $data = $serializer->decode($data, 'json');
+        //
+        $customer->setFirstName($data['firstName'])
+                 ->setLastName($data['lastName'])
+                 ->setAddress($data['address'])
+                 ->setPostalCode($data['postalCode'])
+                 ->setCity($data['city'])
+                 ->setEmail($data['email'])
+                 ->setTel($data['tel'])
+        ;
+
+        //Je gère les erreurs
+        $violations = $validator->validate($customer);
+        if (count($violations) > 0) {
+            $error = $serializer->serialize($violations, 'json');
+            return JsonResponse::fromJsonString($error, Response::HTTP_BAD_REQUEST);
+        }
+        //
+        $manager->persist($customer);
+        $manager->flush();
+        //
+        return new Response('modified', Response::HTTP_OK);
     }
 
     /**
