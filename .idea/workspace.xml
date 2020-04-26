@@ -65,9 +65,8 @@
       <change beforePath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/footer.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/ModalCustomerEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/ModalCustomerEdit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/ModalCustomerNew.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/ModalCustomerNew.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/customers.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/customers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ToDoList/src/Entity/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoList/src/Entity/Task.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ToDoList/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoList/src/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Vuejs/.idea/Vuejs.iml" beforeDir="false" />
@@ -291,6 +290,7 @@
       <workItem from="1587640694079" duration="16902000" />
       <workItem from="1587708899312" duration="35914000" />
       <workItem from="1587798447490" duration="16009000" />
+      <workItem from="1587881212339" duration="2301000" />
     </task>
     <servers />
   </component>

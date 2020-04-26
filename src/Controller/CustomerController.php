@@ -114,6 +114,23 @@ class CustomerController extends AbstractController
     }
 
     /**
+     * Permet de surppprimer un customer
+     *
+     * @Route("/customers/delete/{id}", name="customers_delete")
+     *
+     * @param Customer $customer
+     * @param EntityManagerInterface $manager
+     * @return Response
+     */
+    public function deleteCustomer(Customer $customer, EntityManagerInterface $manager)
+    {
+        $manager->remove($customer);
+        $manager->flush();
+
+        return new Response('deleted', Response::HTTP_NO_CONTENT);
+    }
+
+    /**
      * Permet de récupérer un customer
      *
      * @Route("/customers/{id}", name="customers_findOne")

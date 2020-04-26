@@ -56,6 +56,22 @@ const Customers = (props) => {
         c.email.toLowerCase().includes(search.toLowerCase())
     )
 
+    /**
+     * Permet de supprimer un customer
+     * @param id
+     */
+    const handleDelete = (id) => {
+        const originalsCustomers = [...customers];
+        setCustomers(customers.filter(customer => customer.id !== id));
+
+        axios.delete("/customers/delete/" + id)
+             .then(response => console.log('ok'))
+             .catch(error => {
+                 setCustomers(originalsCustomers)
+                 console.log(error.response);
+             })
+    }
+
 
     return (
 
@@ -105,7 +121,7 @@ const Customers = (props) => {
                             </button>
                         </td>
                         <td className="text-center">
-                            <button type="button" className="btn btn-sm btn-danger">
+                            <button type="button" onClick={() => handleDelete(customer.id)} className="btn btn-sm btn-danger">
                                 <i className="fas fa-trash"></i>
                             </button>
                         </td>
