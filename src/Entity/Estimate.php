@@ -16,26 +16,26 @@ class Estimate
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @Groups({"customers"})
+     * @Groups({"customers", "estimates"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
-     * @Groups({"customers"})
+     * @Groups({"customers", "estimates"})
      */
     private $createdAt;
 
     /**
      * @ORM\Column(type="float", nullable=true)
-     * @Groups({"customers"})
+     * @Groups({"customers", "estimates"})
      *
      */
     private $htAmount;
 
     /**
      * @ORM\Column(type="float", nullable=true)
-     * @Groups({"customers"})
+     * @Groups({"customers", "estimates"})
      */
     private $ttcAmount;
 
@@ -51,6 +51,7 @@ class Estimate
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Customer", inversedBy="estimates")
+     * @Groups({"estimates"})
      */
     private $customer;
 

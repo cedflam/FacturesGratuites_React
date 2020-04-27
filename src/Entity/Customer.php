@@ -27,7 +27,7 @@ class Customer
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="Le prénom est obligatoire")
      * @Assert\Length(min="2", minMessage="Le prénom doit faire au moins 2 caractères")
-     * @Groups({"customers"})
+     * @Groups({"customers", "estimates"})
      */
     private $firstName;
 
@@ -35,7 +35,7 @@ class Customer
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="Le nom est obligatoire")
      * @Assert\Length(min="2", minMessage="Le nom doit faire au moins 2 caractères")
-     * @Groups({"customers"})
+     * @Groups({"customers", "estimates"})
      */
     private $lastName;
 

@@ -9,6 +9,7 @@ import ModalCustomerDetail from "./components/ModalCustomerDetail";
 import TableLoader from "./components/TableLoader";
 import ModalCustomerEdit from "./components/ModalCustomerEdit";
 import ModalCustomerNew from "./components/ModalCustomerNew";
+import ModalEstimatesCustomer from "./components/ModalEstimatesCustomer";
 
 
 const Customers = (props) => {
@@ -17,6 +18,8 @@ const Customers = (props) => {
     const [customer, setCustomer] = useState({});
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState("");
+    const [modal, setModal] = useState(false)
+
 
 
     /**
@@ -29,6 +32,7 @@ const Customers = (props) => {
             .then(data => {
                 setCustomers(data);
                 setLoading(false);
+                toast.info("Liste de clients chargées !")
             })
             .catch(error => console.log(error.response))
     }, []);
@@ -40,6 +44,7 @@ const Customers = (props) => {
      */
     const customerRecover = (customer) => {
         setCustomer(customer);
+        setModal(true);
     }
 
     /**
@@ -96,7 +101,7 @@ const Customers = (props) => {
                     <th className="text-center" scope="col">#</th>
                     <th className="text-center" scope="col">Nom/Prénom</th>
                     <th className="text-center" scope="col">Email</th>
-                    <th className="text-center" scope="col">Devis</th>
+                    <th className="text-center" scope="col">NB/Devis</th>
                     <th className="text-center" scope="col">Fiche</th>
                     <th className="text-center" scope="col">Modifier</th>
                     <th className="text-center" scope="col">Supprimer</th>
@@ -106,13 +111,14 @@ const Customers = (props) => {
 
                 {filteredCustomers.map(customer =>
                     <tr key={customer.id}>
-                        <th className="text-center" scope="row">{customer.id}</th>
+                        <th className="text-center " scope="row">{customer.id}</th>
                         <td className="text-center">  {customer.lastName} {customer.firstName}</td>
                         <td className="text-center ">{customer.email}</td>
                         <td className="text-center">
-                            <a href="" className="badge badge-warning pt-2 pb-2 pl-3 pr-3">
+                            <button onClick={() => customerRecover(customer)} className="btn btn-sm btn-info" data-toggle="modal"
+                                    data-target="#customerEstimates">
                                 {customer.estimates.length}
-                            </a>
+                            </button>
                         </td>
 
                         <td className="text-center">
@@ -144,6 +150,7 @@ const Customers = (props) => {
             <ModalCustomerDetail customer={customer}/>
             <ModalCustomerEdit customer={customer}/>
             <ModalCustomerNew/>
+            {modal && <ModalEstimatesCustomer customer={customer}/>}
 
         </Fragment>
     );
