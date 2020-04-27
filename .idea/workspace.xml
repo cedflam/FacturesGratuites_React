@@ -65,8 +65,19 @@
       <change beforePath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/footer.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/AjaxLoading.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/TableLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/ModalCustomerDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/ModalCustomerDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/ModalCustomerEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/ModalCustomerEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/ModalCustomerNew.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/ModalCustomerNew.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/customers.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/customers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Estimate.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Estimate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ToDoList/src/Entity/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoList/src/Entity/Task.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ToDoList/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoList/src/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Vuejs/.idea/Vuejs.iml" beforeDir="false" />
@@ -268,7 +279,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -290,7 +301,8 @@
       <workItem from="1587640694079" duration="16902000" />
       <workItem from="1587708899312" duration="35914000" />
       <workItem from="1587798447490" duration="16009000" />
-      <workItem from="1587881212339" duration="2301000" />
+      <workItem from="1587881212339" duration="9173000" />
+      <workItem from="1587969832972" duration="3860000" />
     </task>
     <servers />
   </component>
@@ -298,9 +310,9 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="461" y="205" key="SettingsEditor" timestamp="1587641408268">
+    <state x="461" y="205" key="SettingsEditor" timestamp="1587886609881">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="461" y="205" key="SettingsEditor/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1587641408268" />
+    <state x="461" y="205" key="SettingsEditor/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1587886609881" />
   </component>
 </project>

@@ -1,10 +1,12 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import ReactDom from 'react-dom';
 import axios from 'axios';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../css/customers.css';
 
 import ModalCustomerDetail from "./components/ModalCustomerDetail";
-import AjaxLoading from "./components/AjaxLoading";
+import TableLoader from "./components/TableLoader";
 import ModalCustomerEdit from "./components/ModalCustomerEdit";
 import ModalCustomerNew from "./components/ModalCustomerNew";
 
@@ -15,7 +17,6 @@ const Customers = (props) => {
     const [customer, setCustomer] = useState({});
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState("");
-    const [modal, setModal] = useState(false)
 
 
     /**
@@ -30,7 +31,7 @@ const Customers = (props) => {
                 setLoading(false);
             })
             .catch(error => console.log(error.response))
-    }, [modal]);
+    }, []);
 
 
     /**
@@ -39,7 +40,6 @@ const Customers = (props) => {
      */
     const customerRecover = (customer) => {
         setCustomer(customer);
-        setModal(true);
     }
 
     /**
@@ -65,13 +65,14 @@ const Customers = (props) => {
         setCustomers(customers.filter(customer => customer.id !== id));
 
         axios.delete("/customers/delete/" + id)
-             .then(response => console.log('ok'))
-             .catch(error => {
-                 setCustomers(originalsCustomers)
-                 console.log(error.response);
-             })
+            .then(response => {
+                toast.info("Le client a été supprimé !")
+            })
+            .catch(error => {
+                setCustomers(originalsCustomers)
+                toast.error("La supression a échouée !")
+            })
     }
-
 
     return (
 
@@ -84,8 +85,8 @@ const Customers = (props) => {
                            placeholder="Rechercher un client..."/>
                 </div>
                 <div className="col-2 mt-3 mb-3">
-                    <button className="btn btn-success" data-toggle="modal" data-target="#customerNew">
-                        <i className="fas fa-plus"></i> Client
+                    <button className="btn btn-primary" data-toggle="modal" data-target="#customerNew">
+                        <i className="fas fa-user-plus"></i> Client
                     </button>
                 </div>
             </div>
@@ -93,8 +94,9 @@ const Customers = (props) => {
                 <thead>
                 <tr>
                     <th className="text-center" scope="col">#</th>
-                    <th scope="col">Nom/Prenom</th>
-                    <th scope="col">Email</th>
+                    <th className="text-center" scope="col">Nom/Prénom</th>
+                    <th className="text-center" scope="col">Email</th>
+                    <th className="text-center" scope="col">Devis</th>
                     <th className="text-center" scope="col">Fiche</th>
                     <th className="text-center" scope="col">Modifier</th>
                     <th className="text-center" scope="col">Supprimer</th>
@@ -105,15 +107,22 @@ const Customers = (props) => {
                 {filteredCustomers.map(customer =>
                     <tr key={customer.id}>
                         <th className="text-center" scope="row">{customer.id}</th>
-                        <td>{customer.lastName} {customer.firstName}</td>
-                        <td>{customer.email}</td>
+                        <td className="text-center">  {customer.lastName} {customer.firstName}</td>
+                        <td className="text-center ">{customer.email}</td>
+                        <td className="text-center">
+                            <a href="" className="badge badge-warning pt-2 pb-2 pl-3 pr-3">
+                                {customer.estimates.length}
+                            </a>
+                        </td>
+
                         <td className="text-center">
                             <button type="button" onClick={() => customerRecover(customer)}
-                                    className="btn btn-sm btn-success" data-toggle="modal"
+                                    className="btn btn-sm btn-info" data-toggle="modal"
                                     data-target="#customerDetail">
                                 <i className="fas fa-eye"></i>
                             </button>
                         </td>
+
                         <td className="text-center">
                             <button type="button" onClick={() => customerRecover(customer)}
                                     data-toggle="modal" data-target="#customerEdit" className="btn btn-sm btn-primary">
@@ -121,7 +130,8 @@ const Customers = (props) => {
                             </button>
                         </td>
                         <td className="text-center">
-                            <button type="button" onClick={() => handleDelete(customer.id)} className="btn btn-sm btn-danger">
+                            <button type="button" onClick={() => handleDelete(customer.id)}
+                                    className="btn btn-sm btn-danger">
                                 <i className="fas fa-trash"></i>
                             </button>
                         </td>
@@ -130,9 +140,9 @@ const Customers = (props) => {
                 )}
                 </tbody>
             </table>
-            {loading && <AjaxLoading/>}
-            <ModalCustomerDetail customer={customer} modal={modal}/>
-            <ModalCustomerEdit customer={customer} modal={modal}/>
+            {loading && <TableLoader/>}
+            <ModalCustomerDetail customer={customer}/>
+            <ModalCustomerEdit customer={customer}/>
             <ModalCustomerNew/>
 
         </Fragment>

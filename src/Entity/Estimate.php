@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EstimateRepository")
@@ -15,21 +16,26 @@ class Estimate
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"customers"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"customers"})
      */
     private $createdAt;
 
     /**
      * @ORM\Column(type="float", nullable=true)
+     * @Groups({"customers"})
+     *
      */
     private $htAmount;
 
     /**
      * @ORM\Column(type="float", nullable=true)
+     * @Groups({"customers"})
      */
     private $ttcAmount;
 

@@ -81,7 +81,7 @@ class Customer
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Estimate", mappedBy="customer")
-     *
+     * @Groups({"customers"})
      */
     private $estimates;
 

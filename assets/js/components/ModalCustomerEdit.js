@@ -1,5 +1,7 @@
 import React, {Fragment, useState, useEffect} from 'react';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Field from "../forms/Field";
 
@@ -26,10 +28,12 @@ const ModalCustomerEdit = (props) => {
         tel: ""
     })
 
+    //Je récupère le customer courant et je met à jour le state
     const id = props.customer.id
     useEffect(() => {
         setCustomer(props.customer)
     }, [id])
+
 
     /**
      * Permet de récuperer la saisie dans le state
@@ -40,11 +44,18 @@ const ModalCustomerEdit = (props) => {
         setCustomer({...customer, [name]: value})
 
     }
-
+    /**
+     * Permet de modifier un customer
+     * @param event
+     * @returns {Promise<void>}
+     */
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await axios.post('/customers/edit/' + id, customer).then(response => console.log(response.data));
+            await axios.post('/customers/edit/' + id, customer)
+                       .then(response => {
+                           toast.info("Votre client à été modifié !");
+                       });
         }catch(error){
             if(error.response.data){
                 const apiErrors = {};
@@ -53,12 +64,13 @@ const ModalCustomerEdit = (props) => {
                 });
                 setErrors(apiErrors);
             }
+            toast.error("Une erreur s'est produite !")
         }
     }
 
     //Permet de rafraichir la liste des customers à la fermeture de la modal
     const handleClose = () => {
-        window.location.href = '/customers'
+            window.location.href = '/customers'
     }
 
 
@@ -69,7 +81,8 @@ const ModalCustomerEdit = (props) => {
                 <div className="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                     <div className="modal-content">
                         <div className="modal-header bg-light">
-                            <h3 className="modal-title" id="exampleModalCenterTitle"><i className="fas fa-pen "></i>
+                            <h3 className="modal-title" id="exampleModalCenterTitle"><i className="fas fa-pen mr-3"></i>
+                                {customer.firstName} {customer.lastName}
                             </h3>
                             <button onClick={handleClose} type="button" className="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -104,6 +117,7 @@ const ModalCustomerEdit = (props) => {
                     </div>
                 </div>
             </div>
+            <ToastContainer position={toast.POSITION.TOP_CENTER}/>
         </Fragment>
     );
 };

@@ -1,8 +1,11 @@
 import React, {Fragment, useState} from 'react';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 import Field from "../forms/Field";
+
 
 const ModalCustomerNew = (props) => {
 
@@ -44,6 +47,7 @@ const ModalCustomerNew = (props) => {
         try{
           const response =  await axios.post('/customers/new', customer);
           setErrors({});
+          toast.info(customer.firstName+" "+customer.lastName+" a été crée !")
         }catch(error){
             if(error.response.data){
                 const apiErrors = {};
@@ -52,6 +56,7 @@ const ModalCustomerNew = (props) => {
                 });
                 setErrors(apiErrors);
             }
+            toast.error("Une erreur s'est produite !")
         }
     }
 
@@ -101,6 +106,7 @@ const ModalCustomerNew = (props) => {
                     </div>
                 </div>
             </div>
+            <ToastContainer position={toast.POSITION.TOP_CENTER}/>
         </Fragment>
     );
 };

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Company;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,10 +12,14 @@ class HomeController extends AbstractController
 {
     /**
      * @Route("/", name="home")
+     *
+     * @return Response
      */
     public function index()
     {
-        return $this->render('home/home.html.twig');
+        return $this->render('home/home.html.twig', [
+            "company" => $this->getUser()
+        ]);
     }
 
     /**
@@ -29,6 +34,8 @@ class HomeController extends AbstractController
     {
         $error = $utils->getLastAuthenticationError();
         $username = $utils->getLastUsername();
+
+
 
         return $this->render('home/home.html.twig', [
             'hasError' => $error,

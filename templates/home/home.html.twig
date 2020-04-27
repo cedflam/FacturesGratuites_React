@@ -10,6 +10,14 @@
             </div>
         {% endif %}
 
+        {% if app.user is defined and app.user.companyName is defined %}
+            <h2 class="text-center">{{ company.companyName }}</h2>
+        {% elseif app.user %}
+            <h2 class="text-center">Bienvenue {{ company.firstName }} {{ company.lastName }}</h2>
+        {% endif %}
+
+
+
         <div class="jumbotron mt-5">
             <h1 class="display-4">Factures-Gratuites.fr </h1>
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias blanditiis eligendi

@@ -148,6 +148,4 @@ class CustomerController extends AbstractController
         return new Response($customer, Response::HTTP_OK);
 
     }
-
-
 }
