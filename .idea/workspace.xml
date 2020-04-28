@@ -65,11 +65,19 @@
       <change beforePath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/footer.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/customers.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/customers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/customers.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/ModalCustomerEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/ModalCustomerEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/ModalCustomerNew.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/ModalCustomerNew.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/ModalEstimatesCustomer.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/ModalEstimatesCustomer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/customers.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/CustomersPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/estimates.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/forms/EstimateFormNew.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Estimate.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Estimate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EstimateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EstimateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/customer/customers.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ReactIndex/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/estimate/estimates.html.twig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ToDoList/src/Entity/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoList/src/Entity/Task.php" afterDir="false" />
@@ -277,8 +285,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\phpProject\FacturesGratuites_React\assets\js" />
       <recent name="C:\phpProject\FacturesGratuites_React\assets\js\pages" />
+      <recent name="C:\phpProject\FacturesGratuites_React\assets\js\forms" />
+      <recent name="C:\phpProject\FacturesGratuites_React\assets\js" />
     </key>
   </component>
   <component name="SpellCheckerSettings" BundledDictionaries="1" BundledDictionary0="english.dic" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="project-level" UseSingleDictionary="true" />
@@ -296,7 +305,8 @@
       <workItem from="1587708899312" duration="35914000" />
       <workItem from="1587798447490" duration="16009000" />
       <workItem from="1587881212339" duration="9173000" />
-      <workItem from="1587969832972" duration="24243000" />
+      <workItem from="1587969832972" duration="24582000" />
+      <workItem from="1588053872887" duration="30962000" />
     </task>
     <servers />
   </component>
@@ -308,9 +318,9 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="690" y="315" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1587990002929" />
-    <state x="461" y="205" key="SettingsEditor" timestamp="1587886609881">
+    <state x="646" y="213" key="SettingsEditor" timestamp="1588057064336">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="461" y="205" key="SettingsEditor/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1587886609881" />
+    <state x="646" y="213" key="SettingsEditor/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1588057064336" />
   </component>
 </project>

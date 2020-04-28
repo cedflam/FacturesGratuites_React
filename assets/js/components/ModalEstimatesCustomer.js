@@ -1,13 +1,23 @@
 import React, {Fragment, useState, useEffect} from 'react';
-import Moment from "react-moment";
 import moment from "moment";
+import {NavLink} from "react-router-dom";
+
+
 
 const ModalEstimatesCustomer = ({customer}) => {
 
-    const handleRedirect = () => {
-        const id = customer.id;
+    const handleRedirect = (id) => {
         window.location.href = '/estimates/'+id;
     }
+
+    const handlePrint = () => {
+        console.log('imprimer')
+    }
+
+    const handleDelete = () => {
+        console.log('delete')
+    }
+
     return (
         <Fragment>
             <div className="modal fade" id="customerEstimates" tabIndex="-1" role="dialog"
@@ -32,7 +42,6 @@ const ModalEstimatesCustomer = ({customer}) => {
                                     <th className="text-center" scope="col">Date</th>
                                     <th className="text-center" scope="col"> HT</th>
                                     <th className="text-center" scope="col"> TTC</th>
-                                    <th className="text-center" scope="col"> Imprimer</th>
                                 </tr>
 
                                 </thead>
@@ -43,8 +52,6 @@ const ModalEstimatesCustomer = ({customer}) => {
                                         <td className="text-center ">{moment(new Date(estimate.createdAt)).format("DD/MM/YYYY")}</td>
                                         <td className="text-center ">{estimate.htAmount.toLocaleString()} €</td>
                                         <td className="text-center ">{estimate.ttcAmount.toLocaleString()} €</td>
-                                        <td className="text-center">
-                                            <button className="btn btn-sm btn-primary" onClick={handleRedirect}> <i className="fas fa-print"></i></button></td>
                                     </tr>
                                 )}
                                 </tbody>
@@ -52,12 +59,12 @@ const ModalEstimatesCustomer = ({customer}) => {
 
                         </div>
                         <div className="modal-footer bg-light">
-                            <a href="/estimates" type="button" className="btn btn-secondary" >Gestion des devis</a>
                             <button type="button" className="btn btn-secondary" data-dismiss="modal">Fermer</button>
                         </div>
                     </div>
                 </div>
             </div>
+
         </Fragment>
     );
 };

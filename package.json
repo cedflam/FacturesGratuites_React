@@ -24,6 +24,7 @@
         "react-content-loader": "^5.0.4",
         "react-dom": "^16.13.1",
         "react-moment": "^0.9.7",
+        "react-router-dom": "^5.1.2",
         "toastify": "^2.0.0"
     }
 }

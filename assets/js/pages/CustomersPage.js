@@ -1,18 +1,20 @@
 import React, {Fragment, useEffect, useState} from 'react';
-import ReactDom from 'react-dom';
 import axios from 'axios';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import '../css/customers.css';
+import {NavLink} from "react-router-dom";
+import '../../css/app.css'
 
-import ModalCustomerDetail from "./components/ModalCustomerDetail";
-import TableLoader from "./components/TableLoader";
-import ModalCustomerEdit from "./components/ModalCustomerEdit";
-import ModalCustomerNew from "./components/ModalCustomerNew";
-import ModalEstimatesCustomer from "./components/ModalEstimatesCustomer";
+import ModalCustomerDetail from "../components/ModalCustomerDetail";
+import TableLoader from "../components/TableLoader";
+import ModalCustomerEdit from "../components/ModalCustomerEdit";
+import ModalCustomerNew from "../components/ModalCustomerNew";
 
 
-const Customers = (props) => {
+
+
+
+const CustomersPage = (props) => {
 
     const [customers, setCustomers] = useState([]);
     const [customer, setCustomer] = useState({});
@@ -101,7 +103,7 @@ const Customers = (props) => {
                     <th className="text-center" scope="col">#</th>
                     <th className="text-center" scope="col">Nom/Prénom</th>
                     <th className="text-center" scope="col">Email</th>
-                    <th className="text-center" scope="col">NB/Devis</th>
+                    <th className="text-center" scope="col">Devis/Editer</th>
                     <th className="text-center" scope="col">Fiche</th>
                     <th className="text-center" scope="col">Modifier</th>
                     <th className="text-center" scope="col">Supprimer</th>
@@ -115,10 +117,9 @@ const Customers = (props) => {
                         <td className="text-center">  {customer.lastName} {customer.firstName}</td>
                         <td className="text-center ">{customer.email}</td>
                         <td className="text-center">
-                            <button onClick={() => customerRecover(customer)} className="btn btn-sm btn-info" data-toggle="modal"
-                                    data-target="#customerEstimates">
+                            <NavLink to="/estimates" className="btn btn-sm btn-info">
                                 {customer.estimates.length}
-                            </button>
+                            </NavLink>
                         </td>
 
                         <td className="text-center">
@@ -150,14 +151,11 @@ const Customers = (props) => {
             <ModalCustomerDetail customer={customer}/>
             <ModalCustomerEdit customer={customer}/>
             <ModalCustomerNew/>
-            {modal && <ModalEstimatesCustomer customer={customer}/>}
-
         </Fragment>
     );
 }
 
-const rootElement = document.querySelector('#customers');
-ReactDom.render(<Customers/>, rootElement);
+export default CustomersPage;
 
 
 

@@ -106,7 +106,7 @@ const ModalCustomerNew = (props) => {
                     </div>
                 </div>
             </div>
-            <ToastContainer position={toast.POSITION.TOP_CENTER}/>
+
         </Fragment>
     );
 };

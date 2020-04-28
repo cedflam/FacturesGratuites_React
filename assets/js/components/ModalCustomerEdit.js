@@ -117,7 +117,7 @@ const ModalCustomerEdit = (props) => {
                     </div>
                 </div>
             </div>
-            <ToastContainer position={toast.POSITION.TOP_CENTER}/>
+            <ToastContainer position={toast.POSITION.BOTTOM_RIGHT}/>
         </Fragment>
     );
 };

@@ -18,9 +18,9 @@ class CustomerController extends AbstractController
     /**
      * @Route("/customers", name="customers")
      */
-    public function index()
+    public function customersPage()
     {
-        return $this->render('customer/customers.html.twig');
+        return $this->render('ReactIndex/index.html.twig');
     }
 
     /**
