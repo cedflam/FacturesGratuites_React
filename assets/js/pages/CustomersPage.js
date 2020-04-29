@@ -11,9 +11,6 @@ import ModalCustomerEdit from "../components/ModalCustomerEdit";
 import ModalCustomerNew from "../components/ModalCustomerNew";
 
 
-
-
-
 const CustomersPage = (props) => {
 
     const [customers, setCustomers] = useState([]);
@@ -21,8 +18,6 @@ const CustomersPage = (props) => {
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState("");
     const [modal, setModal] = useState(false)
-
-
 
     /**
      * Permet de récuperer les customers liés à une company

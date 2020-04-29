@@ -65,21 +65,10 @@
       <change beforePath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/footer.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/customers.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/ModalCustomerEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/ModalCustomerEdit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/ModalCustomerNew.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/ModalCustomerNew.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/ModalEstimatesCustomer.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/ModalEstimatesCustomer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/customers.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/CustomersPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/estimates.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/forms/EstimateFormNew.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/forms/Prestation.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/forms/Prestation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/pages/CustomersPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/CustomersPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/pages/EstimateNewPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/EstimateNewPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/EstimateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EstimateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/customer/customers.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ReactIndex/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/estimate/estimates.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ToDoList/src/Entity/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoList/src/Entity/Task.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ToDoList/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoList/src/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Vuejs/.idea/Vuejs.iml" beforeDir="false" />
@@ -306,7 +295,8 @@
       <workItem from="1587798447490" duration="16009000" />
       <workItem from="1587881212339" duration="9173000" />
       <workItem from="1587969832972" duration="24582000" />
-      <workItem from="1588053872887" duration="30962000" />
+      <workItem from="1588053872887" duration="31602000" />
+      <workItem from="1588143881336" duration="41963000" />
     </task>
     <servers />
   </component>

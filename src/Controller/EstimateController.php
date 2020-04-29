@@ -2,10 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\Description;
 use App\Entity\Estimate;
+use App\Repository\CustomerRepository;
 use App\Repository\EstimateRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
@@ -48,6 +51,19 @@ class EstimateController extends AbstractController
         ]);
 
         return new Response($data, Response::HTTP_OK);
+    }
+
+    /**
+     * @Route("/estimates/add", name="estimates_add")
+     * @param CustomerRepository $customerRepo
+     * @param SerializerInterface $serializer
+     * @param EntityManagerInterface $manager
+     * @param Request $request
+     */
+    public function estimateAdd(CustomerRepository $customerRepo, SerializerInterface $serializer, EntityManagerInterface $manager, Request $request)
+    {
+        $data = $request->getContent();
+        dump($data);
     }
 
 

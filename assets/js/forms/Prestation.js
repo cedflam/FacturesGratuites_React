@@ -5,28 +5,69 @@ const Prestation = (props) => {
 
     return (
         <Fragment>
+
             <div className="mt-3">
                 <p>Renseignez les champs...</p>
                 <input className="form-control mt-1" type="text"
-                       placeholder="Saisir une prestation..."/>
+                       placeholder="Saisir une prestation..."
+                       name="delivery"
+                       onChange={(event) => props.onItemChange(event, props.prestation, "delivery" )}
+
+
+                />
                 <div className=" row text-center">
-                    <div className="col-4">
-                        <input className="form-control mt-1" type="number"
-                               placeholder="Qté"/>
+                    <div className="col-3">
+                        <input className="form-control mt-1"
+                               type="text"
+                               placeholder="Qté"
+                               name="quantity"
+                               onChange={(event) => props.onItemChange(event, props.prestation, "quantity" )}
+
+                        />
                     </div>
-                    <div className="col-4">
-                        <input className="form-control mt-1" type="number"
-                               placeholder="PU"/>
+                    <div className="col-3">
+                        <input className="form-control mt-1"
+                               type="text"
+                               placeholder="unité"
+                               name="unit"
+                               onChange={(event) => props.onItemChange(event, props.prestation, "unit" )}
+
+                        />
                     </div>
-                    <div className="col-4">
-                        <input className="form-control mt-1" type="number" placeholder="TVA"/>
+                    <div className="col-3">
+                        <input className="form-control mt-1"
+                               type="text"
+                               placeholder="PU"
+                               name="unitPrice"
+                               onChange={(event) => props.onItemChange(event, props.prestation, "unitPrice" )}
+                        />
+                    </div>
+                    <div className="col-3">
+                        <input className="form-control mt-1"
+                               type="text"
+                               placeholder="TVA"
+                               name="tva"
+                               onChange={(event) => props.onItemChange(event, props.prestation, "tva" )}
+
+                        />
                     </div>
                 </div>
-                <input className="form-control mt-1" type="number" placeholder="Montant HT..."/>
-                <input className="form-control mt-1" type="number" placeholder="Montant TTC..."/>
-                <button type="button"
-                        className="btn btn-sm btn-danger float-right mt-2"
+                <input className="form-control mt-1"
+                       type="text"
+                       placeholder="Montant HT..."
+                       name="htAmount"
+                       onChange={(event) => props.onItemChange(event, props.prestation, "htAmount" )}
 
+                />
+                <input className="form-control mt-1"
+                       type="text"
+                       placeholder="Montant TTC..."
+                       name="ttcAmount"
+                       onChange={(event) => props.onItemChange(event, props.prestation, "ttcAmount" )}
+
+                />
+                <button type="button"
+                        className="btn btn-sm btn-danger float-right mt-1"
                 >
                     Supprimer Prestation
                 </button>
