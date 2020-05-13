@@ -17,14 +17,15 @@ const EstimatesPage = (props) => {
 
 
     /**
-     * Permet de récupérer l'ensemmble des devis liés à une company
+     * Permet de récupérer l'ensemble des devis liés à une company
      * au chargement de la page
      */
     useEffect(() => {
         axios.get('/estimates/findAll')
             .then(response => response.data)
             .then(data => {
-                setEstimates(data)
+                setEstimates(data);
+                setLoading(false);
                 toast.info("La liste des devis est chargée !")
 
             })

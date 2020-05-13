@@ -2,16 +2,16 @@ import React, {Fragment} from 'react';
 
 const Prestation = (props) => {
 
-
     return (
         <Fragment>
 
             <div className="mt-3">
                 <p>Renseignez les champs...</p>
+
                 <input className="form-control mt-1" type="text"
                        placeholder="Saisir une prestation..."
                        name="delivery"
-                       onChange={(event) => props.onItemChange(event, props.prestation, "delivery" )}
+                       onChange={(event) => props.onItemChange(event, props.presta, "delivery" )}
 
 
                 />
@@ -21,7 +21,7 @@ const Prestation = (props) => {
                                type="text"
                                placeholder="Qté"
                                name="quantity"
-                               onChange={(event) => props.onItemChange(event, props.prestation, "quantity" )}
+                               onChange={(event) => props.onItemChange(event, props.presta, "quantity" )}
 
                         />
                     </div>
@@ -30,7 +30,7 @@ const Prestation = (props) => {
                                type="text"
                                placeholder="unité"
                                name="unit"
-                               onChange={(event) => props.onItemChange(event, props.prestation, "unit" )}
+                               onChange={(event) => props.onItemChange(event, props.presta, "unit" )}
 
                         />
                     </div>
@@ -39,7 +39,7 @@ const Prestation = (props) => {
                                type="text"
                                placeholder="PU"
                                name="unitPrice"
-                               onChange={(event) => props.onItemChange(event, props.prestation, "unitPrice" )}
+                               onChange={(event) => props.onItemChange(event, props.presta, "unitPrice" )}
                         />
                     </div>
                     <div className="col-3">
@@ -47,7 +47,7 @@ const Prestation = (props) => {
                                type="text"
                                placeholder="TVA"
                                name="tva"
-                               onChange={(event) => props.onItemChange(event, props.prestation, "tva" )}
+                               onChange={(event) => props.onItemChange(event, props.presta, "tva" )}
 
                         />
                     </div>
@@ -56,18 +56,19 @@ const Prestation = (props) => {
                        type="text"
                        placeholder="Montant HT..."
                        name="htAmount"
-                       onChange={(event) => props.onItemChange(event, props.prestation, "htAmount" )}
+                       onChange={(event) => props.onItemChange(event, props.presta, "htAmount" )}
 
                 />
                 <input className="form-control mt-1"
                        type="text"
                        placeholder="Montant TTC..."
                        name="ttcAmount"
-                       onChange={(event) => props.onItemChange(event, props.prestation, "ttcAmount" )}
+                       onChange={(event) => props.onItemChange(event, props.presta, "ttcAmount" )}
 
                 />
                 <button type="button"
                         className="btn btn-sm btn-danger float-right mt-1"
+
                 >
                     Supprimer Prestation
                 </button>
