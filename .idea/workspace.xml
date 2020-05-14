@@ -65,9 +65,9 @@
       <change beforePath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/footer.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../FacturesGratuites/templates/partials/header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/forms/Prestation.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/forms/Prestation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/forms/Prestation.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/pages/EstimateNewPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/EstimateNewPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/pages/EstimatesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/EstimatesPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EstimateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EstimateController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ToDoList/src/Entity/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoList/src/Entity/Task.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ToDoList/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoList/src/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Vuejs/.idea/Vuejs.iml" beforeDir="false" />
@@ -297,7 +297,9 @@
       <workItem from="1588053872887" duration="31602000" />
       <workItem from="1588143881336" duration="43509000" />
       <workItem from="1589273078694" duration="22680000" />
-      <workItem from="1589352601410" duration="22465000" />
+      <workItem from="1589352601410" duration="24959000" />
+      <workItem from="1589436877650" duration="25000" />
+      <workItem from="1589450590052" duration="14845000" />
     </task>
     <servers />
   </component>
@@ -309,10 +311,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="690" y="315" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1587990002929" />
-    <state x="740" y="315" key="FileChooserDialogImpl" timestamp="1588196023753">
+    <state x="740" y="315" key="FileChooserDialogImpl" timestamp="1589436900663">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="740" y="315" key="FileChooserDialogImpl/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1588196023753" />
+    <state x="740" y="315" key="FileChooserDialogImpl/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1589436900663" />
     <state x="646" y="213" key="SettingsEditor" timestamp="1588057064336">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>

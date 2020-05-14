@@ -33,7 +33,6 @@ class EstimateController extends AbstractController
     }
 
 
-
     /**
      * Permet de récupérer l'ensemble des devis liés à une company
      *
@@ -54,18 +53,47 @@ class EstimateController extends AbstractController
     }
 
     /**
+     * Permet d'ajouter un nouveau devis
+     *
      * @Route("/estimates/add", name="estimates_add")
+     *
      * @param CustomerRepository $customerRepo
      * @param SerializerInterface $serializer
      * @param EntityManagerInterface $manager
      * @param Request $request
+     * @return Response
      */
     public function estimateAdd(CustomerRepository $customerRepo, SerializerInterface $serializer, EntityManagerInterface $manager, Request $request)
     {
+        $estimate = new Estimate();
         $data = $request->getContent();
-        dump($data);
-    }
+        $data = $serializer->decode($data, 'json');
 
+        for ($i = 0; $i < count($data) ; $i++){
+
+            dump($data[$i]);
+
+            $description = new Description();
+            $description->setEstimate($estimate)
+                        ->setDevlivery($data[$i]['delivery'])
+                        ->setTtcAmount($data[$i]['ttcAmount'])
+                        ->setHtAmount($data[$i]['htAmount'])
+                        ->setTva($data[$i]['tva'])
+                        ->setUnitPrice($data[$i]['unitPrice'])
+                        ->setQuantity($data[$i]['unitPrice'])
+            ;
+
+            //TODO: faire calculs à intégrer dans estimate...
+            //TODO: Créer et paramétrer une Invoice...
+
+            $manager->persist($description);
+            $manager->persist($estimate);
+        }
+
+        $manager->flush();
+
+        return new Response('created', Response::HTTP_CREATED);
+    }
 
 
     /**

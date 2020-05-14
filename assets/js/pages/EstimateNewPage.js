@@ -6,31 +6,33 @@ import axios from 'axios';
 
 const EstimateNewPage = (props) => {
 
+    const [ttcAmount, setTtcAmount] = useState(0);
+    const [htAmount, setHtAmount] = useState(0);
     const [disabled, setDisabled] = useState(false);
     const [customers, setCustomers] = useState([]);
     const [customer, setCustomer] = useState({});
     const [items, setItems] = useState([]);
     const [prestation, setPrestation] = useState({
-        id:Date.now().toString(),
+        id: Date.now().toString(),
         customer: customer,
         delivery: "",
         quantity: "",
         unit: "",
         unitPrice: "",
         tva: "",
-        htAmount: "",
-        ttcAmount: ""
+        htAmount: 0,
+        ttcAmount: 0
     });
     const resetPresta = {
-        id:Date.now().toString(),
+        id: Date.now().toString(),
         customer: customer,
         delivery: "",
         quantity: "",
         unit: "",
         unitPrice: "",
         tva: "",
-        htAmount: "",
-        ttcAmount: ""
+        htAmount: 0,
+        ttcAmount: 0
     }
 
     //Je récupère tous les customers
@@ -39,6 +41,7 @@ const EstimateNewPage = (props) => {
             .then(response => response.data)
             .then(data => {
                 setCustomers(data);
+                toast.info("Liste de clients chargés ...");
             })
             .catch(error => console.log(error.response))
     }, []);
@@ -50,7 +53,7 @@ const EstimateNewPage = (props) => {
     const addPrestation = () => {
         setPrestation({...prestation})
         let tabItems = [...items];
-        setItems([...tabItems, { prestation:prestation}])
+        setItems([...tabItems, {prestation: prestation}])
         setPrestation(resetPresta)
     }
 
@@ -63,19 +66,37 @@ const EstimateNewPage = (props) => {
 
     //Mise à jour d'une prestation
     const handlePrestaChange = ({currentTarget}) => {
-        //Je récupère la valeur du champ
+
+        let amountHT = parseFloat(prestation.quantity ).toFixed(2) * parseFloat(prestation.unitPrice).toFixed(2);
+        let amountTTC = amountHT * parseFloat(prestation.tva)/100 + amountHT;
+
         const {name, value, id} = currentTarget;
         const clonePresta = {...prestation}
         clonePresta[name] = value;
-        setPrestation({...prestation, [name]: value })
+        clonePresta["htAmount"] = amountHT;
+        clonePresta["ttcAmount"] = amountTTC;
+        setPrestation({...prestation, [name]: value})
         const tabItems = [...items];
         tabItems[id] = clonePresta;
         setItems([...tabItems])
+
+        let totalHT = 0;
+        let totalTTC = 0;
+
+        tabItems.map(item => {
+            totalHT = parseFloat(totalHT.toFixed(2)) + item.htAmount;
+            totalTTC = parseFloat(totalTTC.toFixed(2)) + item.ttcAmount;
+            setHtAmount(totalHT);
+            setTtcAmount(totalTTC)
+        })
+
     }
     //Supprimer une prestation
     const handleDeletePresta = (id) => {
         setItems(items.filter(item => item.id !== id));
     }
+
+
 
     /**
      * Permet de récuperer les données à la soumission
@@ -98,7 +119,9 @@ const EstimateNewPage = (props) => {
         <Fragment>
             <h2 className="text-center mt-2">Nouveau Devis </h2>
             <form className="form-group" onSubmit={handleSubmit}>
+                {disabled === true &&
                 <button type="submit" className="btn btn-success mt-1 mb-3 float-right">Enregistrer le devis</button>
+                }
                 <div>
                     <p>Sélectionnez votre client...</p>
                     <select name="customers" id="customers-select" className="form-control"
@@ -119,11 +142,11 @@ const EstimateNewPage = (props) => {
 
                     {items.map((presta, index) =>
                         <div key={index}>
-                            <p>Renseignez les champs...</p>
+                            <p className="mt-2">Renseignez les champs...</p>
                             <input className="form-control mt-1" type="text"
                                    placeholder="Saisir une prestation..."
                                    name="delivery"
-                                   value={presta.delivery}
+                                   value={presta.delivery || ''}
                                    id={index}
                                    onChange={handlePrestaChange}
                             />
@@ -133,7 +156,7 @@ const EstimateNewPage = (props) => {
                                            type="number"
                                            placeholder="Qté"
                                            name="quantity"
-                                           value={presta.quantity}
+                                           value={presta.quantity || ''}
                                            id={index}
                                            onChange={handlePrestaChange}
 
@@ -143,7 +166,7 @@ const EstimateNewPage = (props) => {
                                     <input className="form-control mt-1"
                                            type="text"
                                            placeholder="unité"
-                                           value={presta.unit}
+                                           value={presta.unit || ''}
                                            id={index}
                                            name="unit"
                                            onChange={handlePrestaChange}
@@ -155,7 +178,7 @@ const EstimateNewPage = (props) => {
                                            type="number"
                                            placeholder="PU"
                                            name="unitPrice"
-                                           value={presta.unitPrice}
+                                           value={presta.unitPrice || ''}
                                            id={index}
                                            onChange={handlePrestaChange}
                                     />
@@ -165,7 +188,7 @@ const EstimateNewPage = (props) => {
                                            type="number"
                                            placeholder="TVA"
                                            name="tva"
-                                           value={presta.tva}
+                                           value={presta.tva || ''}
                                            id={index}
                                            onChange={handlePrestaChange}
 
@@ -177,7 +200,7 @@ const EstimateNewPage = (props) => {
                                    placeholder="Montant HT..."
                                    name="htAmount"
                                    id={index}
-                                   value={presta.htAmount}
+                                   value={presta.htAmount || ''}
                                    onChange={handlePrestaChange}
 
                             />
@@ -186,7 +209,7 @@ const EstimateNewPage = (props) => {
                                    placeholder="Montant TTC..."
                                    name="ttcAmount"
                                    id={index}
-                                   value={presta.ttcAmount}
+                                   value={presta.ttcAmount || ''}
                                    onChange={handlePrestaChange}
 
                             />
@@ -198,6 +221,18 @@ const EstimateNewPage = (props) => {
                             </button>
                         </div>
                     )}
+                    {disabled === true &&
+                    <div className="row mt-5">
+                        <div className="col-6">
+                            <label htmlFor="">Total HT</label>
+                            <input type="number" name="totalHT" onChange={handlePrestaChange} value={htAmount || ''} className="form-control" />
+                        </div>
+                        <div className="col-6">
+                            <label htmlFor="">Total TTC</label>
+                            <input type="number" name="TotalTTC" onChange={handlePrestaChange} value={ttcAmount || ''}  className="form-control"/>
+                        </div>
+                    </div>
+                    }
                 </div>
             </form>
             {disabled === true &&
